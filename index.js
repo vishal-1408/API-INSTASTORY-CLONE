@@ -19,7 +19,10 @@ app.use(storyCommentRoutes);
 
 
 //Server
-const PORT = process.env.port || 3000;
-app.listen(PORT,()=>{
+let port = process.env.PORT;
+if(port == null || port== ""){
+  port = 3000;
+}
+app.listen(port,()=>{
   console.log("server on");
 })
